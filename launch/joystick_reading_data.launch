@@ -1,0 +1,13 @@
+<!--Example of run: 
+
+roslaunch joystick_reading_data.launch joystick_device_id:=js1
+-->
+<launch>
+<arg name="joystick_device_id" default="js0" />
+ <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="joystick_publisher" >
+    <param name="dev" type="string" value="/dev/input/$(arg joystick_device_id)" />
+  </node>
+
+  <node pkg="ros_joystick_reading_data" type="joystick_reader" name="joystick_reader" output="screen"/>
+</launch>
