@@ -4,6 +4,7 @@ set(CMAKE_BUILD_TYPE Debug)
 #set(CMAKE_BUILD_TYPE Release)
 
 find_package(catkin REQUIRED COMPONENTS  roscpp joy)
+include_directories(${catkin_INCLUDE_DIRS})
 
 catkin_package()
 
